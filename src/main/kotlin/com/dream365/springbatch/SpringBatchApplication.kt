@@ -1,13 +1,11 @@
 package com.dream365.springbatch
 
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.data.mongodb.config.EnableMongoAuditing
-import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories
 
 @SpringBootApplication
-@EnableReactiveMongoRepositories
-@EnableMongoAuditing
+@EnableBatchProcessing
 class SpringBatchApplication
 
 fun main(args: Array<String>) {
