@@ -23,5 +23,12 @@ Spring Batch Tutorial
  
 - Meta Data Table
     - BATCH_JOB_INSTANCE
-        - Job Param에 따라 Record 생성
+        - Job Param 단위로 Record 생성
         - Job Param이 같다면 생성이 안되며 Spring에서는 JobInstanceAlreadyCompleteException이 발생
+    - BATCH_JOB_EXECUTION
+        - JOB_EXECUTION(자식) - JOB_INSTANCE(부모) 관계
+        - JOB_INSTNACE의 성공/실패 내역 모두 저장
+            - JOB_INSTANCE와 달리 성공/실패를 모두 Record로 기록하여 동일 Job에 대해 복수의 Record 생성이 
+            - JOB_EXECUTION이 COMPLETE해야 동일한 JOB이 수행 안됨
+    - BATCH_JOB_EXECUTION_PARAMS
+        - JOB_EXECUTION에 쓰인 Job Param 정보를 담고 있음
