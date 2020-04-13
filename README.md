@@ -16,7 +16,7 @@ Spring Batch Tutorial
     - Step 안에는 Tasklet or Reader & Processor & Writer 묶음이 존재 (하나를 선택)
 - Tasklet
     - Step 안의 수행될 기능 명시
-    - Step 안에서 단일로 수행될 커스텀한 기능(자유로히 해당 STEP에서 하고 싶은 내용을 구현)
+    - Step 안에서 단일로 수행될 커스텀한 기능(자유로이 해당 STEP에서 하고 싶은 내용을 구현)
 
 ## Batch With Mysql
 
