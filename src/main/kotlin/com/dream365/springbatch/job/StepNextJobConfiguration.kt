@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class SimpleNextJobConfiguration(
+class StepNextJobConfiguration(
     private val jobBuilderFactory: JobBuilderFactory,
     private val stepBuilderFactory: StepBuilderFactory
-) : ILogging by LoggingImpl<SimpleNextJobConfiguration>() {
+) : ILogging by LoggingImpl<StepNextJobConfiguration>() {
     @Bean
     fun stepNextJob(s1: Step, s2: Step, s3: Step): Job = jobBuilderFactory.get("stepNextJob")
         .start(s1)

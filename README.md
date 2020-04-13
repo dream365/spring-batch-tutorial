@@ -16,7 +16,7 @@ Spring Batch Tutorial
     - Step 안에는 Tasklet or Reader & Processor & Writer 묶음이 존재 (하나를 선택)
 - Tasklet
     - Step 안의 수행될 기능 명시
-    - Step 안에서 단일로 수행될 커스텀한 기능(자유로히 해당 STEP에서 하고 싶은 내용을 구현)
+    - Step 안에서 단일로 수행될 커스텀한 기능(자유로 해당 STEP에서 하고 싶은 내용을 구현)
 
 ## Batch With Mysql
 
@@ -47,3 +47,13 @@ Spring Batch Tutorial
             .build()
         // step1 -> step2 -> step3 순서로 실행
     ```
+- Conditional
+    - on(pattern: String) 
+        - ExisStatus를 기반으로 listen한다.
+    - to(step: Step)
+        - 이동할 Step을 지정
+    - from(step: Step)
+        - start와 같이 base step의 리스터 역할 
+        - start의 condition에 걸리지 않았는데 base step에서 다시 시작해야 할 때 사용
+    - end()
+        - 모든 Step을 종료하는 함수 or 해당 컨디션에서 다음 컨디션으로 넘어가기 위한 함수:wq
