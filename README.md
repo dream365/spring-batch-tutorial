@@ -4,6 +4,8 @@ Spring Batch Tutorial
 
 ## Batch Components
 
+![batch_component](img/batch_component.png)
+
 - Job
     - 배치 처리 과정을 하나의 단위로 표현한 객체
     - 하나의 Job 안에는 여러 Step이 포함
