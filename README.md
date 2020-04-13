@@ -39,7 +39,7 @@ Spring Batch Tutorial
 
 - Next
     - 순차적으로 일련의 Step을 연결하여 사용
-    ```java
+    ```kotlin
         jobBuilderFactory.get("batchJob")
             .start(step1())
             .next(step2())
@@ -56,4 +56,16 @@ Spring Batch Tutorial
         - start와 같이 base step의 리스터 역할 
         - start의 condition에 걸리지 않았는데 base step에서 다시 시작해야 할 때 사용
     - end()
-        - 모든 Step을 종료하는 함수 or 해당 컨디션에서 다음 컨디션으로 넘어가기 위한 함수:wq
+        - 모든 Step을 종료하는 함수 or 해당 컨디션에서 다음 컨디션으로 넘어가기 위한 함:wq
+        
+- Decide
+    - 위의 conditional function의 경우 ExitStatus의 조작과 biz logic이 섞여 있음
+    - 별도의 분기처리만을 위한 interface를 구현하여 처리 
+    ```kotlin
+        class DeciderImpl: JobExecutionDecider {
+                override fun decide(jobExecution: JobExecution, stepExecution: StepExecution?): FlowExecutionStatus {
+                    val rand = Random()
+                    
+                }
+            }
+    ```
