@@ -1,9 +1,8 @@
-#Spring Batch Tutorial
+Spring Batch Tutorial
 =====
 > Spring framework에서 batch processing를 사용하고 공부하기 위해 만든 project입니다.
 
-###Components
-=====  
+## Batch Components
 
 - Job
     - 배치 처리 과정을 하나의 단위로 표현한 객체
