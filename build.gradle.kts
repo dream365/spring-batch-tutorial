@@ -22,9 +22,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    //Spring Quartz
-    implementation("org.springframework:spring-context-support")
-    implementation("org.quartz-scheduler:quartz:2.3.0")
+    runtime("com.h2database:h2")
+    runtime("mysql:mysql-connector-java")
 }
 
 tasks {
