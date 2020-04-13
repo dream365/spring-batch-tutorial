@@ -26,7 +26,7 @@ class SimpleJobConfiguration(
     @JobScope
     fun simpleStep(
         @Value("#{jobParameters[requestDate]}")
-        requestDate: String
+        requestDate: String?
     ): Step = stepBuilderFactory.get("simpleStep")
         .tasklet { _, _ ->
             log.info(">>> Simple step")

@@ -34,3 +34,16 @@ Spring Batch Tutorial
             - JOB_EXECUTION이 COMPLETE해야 동일한 JOB이 수행 안됨
     - BATCH_JOB_EXECUTION_PARAMS
         - JOB_EXECUTION에 쓰인 Job Param 정보를 담고 있음
+        
+## Batch Job Step Flow Control
+
+- Next
+    - 순차적으로 일련의 Step을 연결하여 사용
+    ```java
+        jobBuilderFactory.get("batchJob")
+            .start(step1())
+            .next(step2())
+            .next(step3())
+            .build()
+        // step1 -> step2 -> step3 순서로 실행
+    ```
